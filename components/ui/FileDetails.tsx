@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import { FaCheck } from "react-icons/fa";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import AccessCircle from "./AccessCircle";
-import { Input } from "@/components/ui/input"; // Assuming you have an input component in your UI library
+import { Input } from "@/components/ui/input";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 interface File {
   id: number;
@@ -64,7 +65,10 @@ const FileDetails: React.FC<Props> = ({ file }) => {
                 <div className="flex flex-wrap items-center">
                   {file.accessUsers?.map((user, index) => (
                     <React.Fragment key={user.id}>
-                      <AccessCircle initials={user.initials} />
+                              <Avatar>
+                              <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                              <AvatarFallback>{user.initials}</AvatarFallback>
+                            </Avatar>
                       {index < (file.accessUsers?.length ?? 0) - 1 && (
                         <div className="border-l border-gray-300 h-10 mx-2"></div>
                       )}
@@ -72,7 +76,7 @@ const FileDetails: React.FC<Props> = ({ file }) => {
                   ))}
                 </div>
                 <div className="w-full border-t border-gray-300 mt-4"></div>{" "}
-                {/* Horizontal line */}
+                {}
                 <div className="mt-4">
                   <div className="font-bold">File Details</div>
                   <div className="mt-4">
