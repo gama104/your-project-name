@@ -1,4 +1,3 @@
-"use client";
 import { Folder } from "@/lib/definitions";
 import React from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
@@ -16,7 +15,7 @@ const FolderList: React.FC<Props> = ({ folders, onFolderClick }) => {
       <ul>
         {folders.map((folder) => (
           <li
-            key={folder.id}
+            key={folder.id.toString()}
             onClick={() => onFolderClick(folder)}
             className="cursor-pointer flex items-center justify-between bg-cyan-600 p-2 rounded-lg mb-2 hover:bg-cyan-700"
           >
