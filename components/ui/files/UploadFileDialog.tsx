@@ -6,7 +6,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogClose,
-} from "./dialog";
+} from "../dialog";
 import { Button } from "@/components/ui/button";
 import FileUpload from "./FileUpload";
 import { Progress } from "@/components/ui/progress";

@@ -6,7 +6,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogClose,
-} from "./dialog";
+} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 
 interface AddFolderDialogProps {

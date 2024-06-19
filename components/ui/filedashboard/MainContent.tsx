@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import FolderList from "./FolderList";
-import FileList from "./FileList";
-import FileDetails from "./FileDetails";
+import FolderList from "../folders/FolderList";
+import FileList from "../files/FileList";
+import FileDetails from "../files/FileDetails";
 import { Folder, GeneraFile } from "@/lib/definitions";
 import { files, folders } from "@/lib/placeholder-data";
 

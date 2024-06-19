@@ -4,10 +4,10 @@ import React from "react";
 import { GeneraFile } from "@/lib/definitions";
 
 interface Props {
-  id: number;
+  file: GeneraFile;
 }
 
-const FileDetails: React.FC<Props> = ({ id }) => {
+const FileDetails: React.FC<Props> = ({ file }) => {
   return (
     <div className="bg-white rounded-lg shadow-md mb-4 pt-4 h-full">
       <div className="flex items-center pl-4">

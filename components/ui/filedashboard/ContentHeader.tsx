@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { BsPlus } from "react-icons/bs";
 import { Button } from "@/components/ui/button";
-import AddFolderDialog from "./AddFolderDialog";
+import AddFolderDialog from "../folders/AddFolderDialog";
 
 interface Props {
   title: string;
