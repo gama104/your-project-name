@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Card, CardContent, CardTitle } from "@/components/ui/card"; // Assuming Card does not require CardHeader
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import {
   FaCheck,
   FaEllipsisV,
@@ -8,22 +8,7 @@ import {
   FaFileExcel,
   FaFileWord,
 } from "react-icons/fa";
-
-interface File {
-  id: number;
-  name: string;
-  size: number;
-  date: string;
-  time: string;
-  details?: string;
-  activity?: string;
-  fileType: "pdf" | "excel" | "word";
-}
-
-interface ItemsComponentProps {
-  files: File[];
-  onFileClick: (file: File) => void;
-}
+import { ItemsComponentProps } from "@/lib/definitions";
 
 const ItemsComponent: React.FC<ItemsComponentProps> = ({
   files,

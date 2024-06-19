@@ -1,19 +1,9 @@
+import { GeneraFile } from "@/lib/definitions";
 import React from "react";
 
-interface File {
-  id: number;
-  name: string;
-  size: number;
-  date: string;
-  time: string;
-  details?: string;
-  activity?: string;
-  fileType: "pdf" | "excel" | "word";
-}
-
 interface Props {
-  files: File[];
-  onFileClick: (file: File) => void;
+  files: GeneraFile[];
+  onFileClick: (file: GeneraFile) => void;
 }
 
 const FileListItem: React.FC<Props> = ({ files, onFileClick }) => {

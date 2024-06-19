@@ -1,15 +1,8 @@
 "use client";
+import { Folder } from "@/lib/definitions";
 import React from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaFolder } from "react-icons/fa";
-
-interface Folder {
-  id: number;
-  name: string;
-  location: string;
-  date: string;
-  time: string;
-}
 
 interface Props {
   folders: Folder[];

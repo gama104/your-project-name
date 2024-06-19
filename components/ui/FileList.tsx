@@ -7,24 +7,7 @@ import FileListIcon from "./FileListIcon";
 import { Button } from "@/components/ui/button";
 import { BsPlus } from "react-icons/bs";
 import UploadFileDialog from "./UploadFileDialog";
-
-interface File {
-  id: number;
-  name: string;
-  size: number;
-  date: string;
-  time: string;
-  details?: string;
-  activity?: string;
-  fileType: "pdf" | "excel" | "word";
-}
-
-interface Props {
-  files: File[];
-  viewType: "list" | "icons";
-  onFileClick: (file: File) => void;
-  setViewType: (viewType: "list" | "icons") => void;
-}
+import { GeneraFile, Props } from "@/lib/definitions";
 
 const FileList: React.FC<Props> = ({
   files,
