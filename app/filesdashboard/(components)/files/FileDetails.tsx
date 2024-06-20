@@ -1,7 +1,7 @@
 // components/FileDetails.tsx
 
 import React from "react";
-import { GeneraFile } from "@/lib/definitions";
+import { GeneraFile } from "../../(store)/definitions";
 
 interface Props {
   file: GeneraFile;

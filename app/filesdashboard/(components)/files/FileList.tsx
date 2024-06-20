@@ -7,7 +7,7 @@ import FileListIcon from "./FileListIcon";
 import { Button } from "@/components/ui/button";
 import { BsPlus } from "react-icons/bs";
 import UploadFileDialog from "./UploadFileDialog";
-import { GeneraFile, Props } from "@/lib/definitions";
+import { GeneraFile, Props } from "../../(store)/definitions";
 
 const FileList: React.FC<Props> = ({
   files,

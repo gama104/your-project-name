@@ -1,7 +1,7 @@
-import { Folder } from "@/lib/definitions";
 import React from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaFolder } from "react-icons/fa";
+import { Folder } from "../../(store)/definitions";
 
 interface Props {
   folders: Folder[];

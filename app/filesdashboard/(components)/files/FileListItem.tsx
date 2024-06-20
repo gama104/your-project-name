@@ -1,4 +1,4 @@
-import { GeneraFile } from "@/lib/definitions";
+import { GeneraFile } from "../../(store)/definitions";
 import React from "react";
 
 interface Props {

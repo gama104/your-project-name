@@ -8,7 +8,7 @@ import {
   FaFileExcel,
   FaFileWord,
 } from "react-icons/fa";
-import { ItemsComponentProps } from "@/lib/definitions";
+import { ItemsComponentProps } from "../../(store)/definitions";
 
 const ItemsComponent: React.FC<ItemsComponentProps> = ({
   files,

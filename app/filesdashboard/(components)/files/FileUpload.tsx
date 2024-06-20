@@ -1,5 +1,5 @@
 "use client";
-import { FileUploadProps } from "@/lib/definitions";
+import { FileUploadProps } from "../../(store)/definitions";
 import React, { useState } from "react";
 
 const FileUpload: React.FC<FileUploadProps> = ({ onFileSelect }) => {

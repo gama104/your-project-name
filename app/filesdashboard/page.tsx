@@ -1,7 +1,5 @@
-import MainContent from "@/components/ui/filedashboard/MainContent";
+import MainContent from "./(components)/filedashboard/MainContent";
 
 export default function FilesDashboard() {
-  return (
-      <MainContent />
-  );
+  return <MainContent />;
 }

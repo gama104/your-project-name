@@ -4,8 +4,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import FolderList from "../folders/FolderList";
 import FileList from "../files/FileList";
 import FileDetails from "../files/FileDetails";
-import { Folder, GeneraFile } from "@/lib/definitions";
-import { files, folders } from "@/lib/placeholder-data";
+import { Folder, GeneraFile } from "../../(store)/definitions";
+import { files, folders } from "../../(store)/placeholder-data";
 
 const MainContent = () => {
   const router = useRouter();
@@ -24,7 +24,7 @@ const MainContent = () => {
     }
     if (fileIdParam && selectedFolder) {
       const file = files[selectedFolder.id].find(
-        (f) => f.id.toString() === fileIdParam 
+        (f) => f.id.toString() === fileIdParam
       );
       setSelectedFile(file || null);
     }
