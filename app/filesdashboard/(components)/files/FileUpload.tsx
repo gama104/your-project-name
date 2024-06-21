@@ -1,6 +1,9 @@
 "use client";
-import { FileUploadProps } from "../../(store)/definitions";
 import React, { useState } from "react";
+
+export interface FileUploadProps {
+  onFileSelect: (files: File[]) => void;
+}
 
 const FileUpload: React.FC<FileUploadProps> = ({ onFileSelect }) => {
   const [dragActive, setDragActive] = useState(false);

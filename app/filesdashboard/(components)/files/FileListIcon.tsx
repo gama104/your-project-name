@@ -8,7 +8,12 @@ import {
   FaFileExcel,
   FaFileWord,
 } from "react-icons/fa";
-import { ItemsComponentProps } from "../../(store)/definitions";
+import { GeneraFile } from "../../(store)/definitions";
+
+export interface ItemsComponentProps {
+  files: GeneraFile[];
+  onFileClick: (file: GeneraFile) => void;
+}
 
 const ItemsComponent: React.FC<ItemsComponentProps> = ({
   files,

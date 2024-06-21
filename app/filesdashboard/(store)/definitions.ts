@@ -1,13 +1,13 @@
 export interface Folder {
-    id: number;
+    id: string;
     name: string;
     location: string;
     date: string;
     time: string;
   }
   
- export  interface GeneraFile {
-    id: number;
+ export  interface GeneraFileDetail {
+    id: string;
     name: string;
     size: number;
     date: string;
@@ -15,22 +15,14 @@ export interface Folder {
     details?: string;
     activity?: string;
     fileType: "pdf" | "excel" | "word";
-    accessUsers?: { id: number; initials: string }[];
+    accessUsers?: { id: string; initials: string }[];
   }
 
- export interface Props {
-    file?: GeneraFile;
-    files: GeneraFile[];
-    viewType?: "list" | "icons";
-    onFileClick: (file: GeneraFile) => void;
-    setViewType: (viewType: "list" | "icons") => void;
-  }
-
-  export interface FileUploadProps {
-    onFileSelect: (files: File[]) => void;
-}
-
-export interface ItemsComponentProps {
-    files: GeneraFile[];
-    onFileClick: (file: GeneraFile) => void;
+  export  interface GeneraFile {
+    id: string;
+    name: string;
+    size: number;
+    date: string;
+    time: string;
+    fileType: "pdf" | "excel" | "word";
   }
