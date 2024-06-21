@@ -27,6 +27,7 @@ const FileListItem: React.FC<FolderListItemProps> = ({ folder }) => {
 
   return (
     <li
+      key={folder.id}
       onClick={() => onFolderClick(folder.id)}
       className="cursor-pointer flex items-center justify-between bg-cyan-600 p-2 rounded-lg mb-2 hover:bg-cyan-700"
     >

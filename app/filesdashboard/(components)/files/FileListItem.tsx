@@ -22,6 +22,7 @@ const FileListItem: React.FC<Props> = ({ files}) => {
     <ul className="divide-y divide-gray-200">
       {files.map((file) => (
         <li
+          key={file.id}
           onClick={() => onFolderClick(file.id)}
           className="flex justify-between items-center p-4 hover:bg-gray-100 cursor-pointer"
         >
