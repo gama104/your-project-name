@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { GeneraFile } from "../../(store)/definitions";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
@@ -7,16 +7,16 @@ interface Props {
   files: GeneraFile[];
 }
 
-const FileListItem: React.FC<Props> = ({ files}) => {
-    const { replace } = useRouter();
-    const pathname = usePathname();
-    const searchParams = useSearchParams();
+const FileListItem: React.FC<Props> = ({ files }) => {
+  const { replace } = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
 
-    const onFolderClick = (fileID: string) => {
-      const params = new URLSearchParams(searchParams.toString());
-        params.set("file", fileID);
-        replace(`${pathname}?${params.toString()}`);
-    };
+  const onFolderClick = (fileID: string) => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("file", fileID);
+    replace(`${pathname}?${params.toString()}`);
+  };
 
   return (
     <ul className="divide-y divide-gray-200">

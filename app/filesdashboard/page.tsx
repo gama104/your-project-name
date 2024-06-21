@@ -14,10 +14,10 @@ export default function FilesDashboard({
   return (
     <div className="flex-1 bg-gray-200 p-4 h-full">
       <div className="flex h-full space-x-3">
-        <div className={`flex flex-col ${selectedFile ? 'w-2/5' : 'w-2/5'}`}>
+        <div className={"flex flex-col w-2/5"}>
           <FolderList />
         </div>
-        <div className={`flex flex-col ${selectedFile ? 'w-2/5' : 'w-3/5'}`}>
+        <div className={"flex flex-col w-2/5"}>
           <FileList folder={selectedFolder} view={selectedView} />
         </div>
         {selectedFile && (

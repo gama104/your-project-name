@@ -21,24 +21,21 @@ const FileList = ({ folder, view }: FileListProps) => {
 
   return (
     <div className="bg-white rounded-lg shadow-md p-4 h-full flex flex-col">
-      <div className="flex justify-between items-center mb-4">
-        <div className="flex items-center">
+      <div className="flex justify-between mb-4">
+        <div className="flex">
           <FaFileAlt className="text-teal-800 mr-2 text-lg" />
           <h2 className="text-lg font-semibold text-teal-800">User Reports</h2>
         </div>
         <FilesViewToggle fileview={view} />
       </div>
-      <div className="flex-grow overflow-auto h-1">
+      <div className="flex-grow overflow-y-auto h-1">
         {selectedView === "list" ? (
           <FileListItem files={files} />
         ) : (
           <FileListIcon files={files} />
         )}
       </div>
-      <div className="mt-2">
-        <p className="text-gray-500 text-sm mb-2">
-          To upload a new file, it is required to add PDF, DOC, XLSX source.
-        </p>
+      <div className="mt-auto">
         <AddFileButton />
       </div>
     </div>
