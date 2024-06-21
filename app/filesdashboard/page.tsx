@@ -6,19 +6,21 @@ export default function FilesDashboard({
 }: {
   searchParams?: { [key: string]: string | undefined };
 }) {
-  const selectedFileID = searchParams?.file;
+  const selectedFile = searchParams?.file;
+  const selectedFolder = searchParams?.folder;
+  const selectedView= searchParams?.view;
   return (
     <div className="flex-1 bg-gray-200 p-4 h-full">
-      <div className={`flex space-x-4 h-full`}>
+      <div className={`flex space-x-3 h-full`}>
         <div className="w-2/5">
           <FolderList/>
         </div>
         <div className="w-2/5">
-          <FileList />
+          <FileList folder={selectedFolder}  view={selectedView} />
         </div>
-        {selectedFileID && (
+        {selectedFile && (
           <div className="w-1/5">
-            <FileDetails id={selectedFileID} />
+            <FileDetails id={selectedFile} />
           </div>
         )}
       </div>

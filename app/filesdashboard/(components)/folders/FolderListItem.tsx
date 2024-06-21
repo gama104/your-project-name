@@ -20,16 +20,14 @@ const FileListItem: React.FC<FolderListItemProps> = ({ folder }) => {
 
     if (selectedFolder !== folderId) {
       params.set("folder", folderId);
+      params.delete("file");
+      replace(`${pathname}?${params.toString()}`);
     }
-    params.delete("file");
-
-    replace(`${pathname}?${params.toString()}`);
   };
 
   return (
     <li
-      key={folder.id.toString()}
-      onClick={() => onFolderClick(folder.id.toString())}
+      onClick={() => onFolderClick(folder.id)}
       className="cursor-pointer flex items-center justify-between bg-cyan-600 p-2 rounded-lg mb-2 hover:bg-cyan-700"
     >
       <div className="flex items-center">

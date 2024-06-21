@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
 import { GeneraFileDetail } from "../../(store)/definitions";
 import { filesdetail as filesdetail } from "../../(store)/placeholder-data";
 

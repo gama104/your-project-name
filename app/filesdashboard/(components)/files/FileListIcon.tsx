@@ -9,16 +9,19 @@ import {
   FaFileWord,
 } from "react-icons/fa";
 import { GeneraFile } from "../../(store)/definitions";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+
 
 export interface ItemsComponentProps {
   files: GeneraFile[];
-  onFileClick: (file: GeneraFile) => void;
 }
 
 const ItemsComponent: React.FC<ItemsComponentProps> = ({
   files,
-  onFileClick,
 }) => {
+  const { replace } = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const getFileIcon = (fileType: string) => {
     switch (fileType) {
       case "pdf":
@@ -32,12 +35,17 @@ const ItemsComponent: React.FC<ItemsComponentProps> = ({
     }
   };
 
+  const onFolderClick = (fileID: string) => {
+    const params = new URLSearchParams(searchParams.toString());
+      params.set("file", fileID);
+      replace(`${pathname}?${params.toString()}`);
+  };
+
   return (
     <div className="grid grid-cols-3 gap-4">
       {files.map((file) => (
         <Card
-          key={file.id}
-          onClick={() => onFileClick(file)}
+        onClick={() => onFolderClick(file.id)}
           className="cursor-pointer bg-gray-100 hover:bg-gray-200 py-4"
         >
           <CardContent className="flex items-center">

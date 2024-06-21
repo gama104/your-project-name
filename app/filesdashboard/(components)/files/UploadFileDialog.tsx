@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   Dialog,
   DialogContent,
@@ -21,20 +21,25 @@ import {
 interface UploadFileDialogProps {
   isOpen: boolean;
   onClose: () => void;
-  onAddMore: () => void;
-  onValidate: () => void;
 }
 
-const UploadFileDialog: React.FC<UploadFileDialogProps> = ({
-  isOpen,
-  onClose,
-  onAddMore,
-  onValidate,
-}) => {
+const UploadFileDialog: React.FC<UploadFileDialogProps> = ({ isOpen, onClose }) => {
   const [pendingFiles, setPendingFiles] = useState<File[]>([]);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileSelect = (files: File[]) => {
     setPendingFiles((prevFiles) => [...prevFiles, ...files]);
+  };
+
+  const handleFileInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(event.target.files || []);
+    handleFileSelect(files);
+  };
+
+  const handleAddMoreClick = () => {
+    if (fileInputRef.current) {
+      fileInputRef.current.click();
+    }
   };
 
   const handleFileRemove = (index: number) => {
@@ -67,9 +72,8 @@ const UploadFileDialog: React.FC<UploadFileDialogProps> = ({
       <DialogContent className="w-3/5 p-6">
         <DialogHeader className="flex justify-between">
           <DialogTitle>Add New File</DialogTitle>
-          <DialogClose onClick={onClose} />
         </DialogHeader>
-        <p className=" text-gray-700 text-xs">
+        <p className="text-gray-700 text-xs">
           Files should be excel, image, pdf, or doc file.
         </p>
         <div className="mb-4">
@@ -94,7 +98,7 @@ const UploadFileDialog: React.FC<UploadFileDialogProps> = ({
                       </div>
                     </div>
                     <button onClick={() => handleFileRemove(index)}>
-                      <FaTimes className="text-gray-500 hover:text-red-500 mb-5" />
+                      <FaTimes className="text-gray-500 hover:text-red-500" />
                     </button>
                   </div>
                   <div className="flex items-center justify-between mt-1">
@@ -113,17 +117,21 @@ const UploadFileDialog: React.FC<UploadFileDialogProps> = ({
           <Button
             variant="outline"
             className="border-sky-500 text-sky-500 hover:bg-gray-200 hover:text-black"
-            onClick={onAddMore}
+            onClick={handleAddMoreClick}
           >
             Add More
           </Button>
-          <Button
-            className="bg-sky-500 text-white hover:bg-sky-600"
-            onClick={onValidate}
-          >
+          <Button className="bg-sky-500 text-white hover:bg-sky-600">
             Validate
           </Button>
         </div>
+        <input
+          type="file"
+          ref={fileInputRef}
+          className="hidden"
+          multiple
+          onChange={handleFileInputChange}
+        />
       </DialogContent>
     </Dialog>
   );
