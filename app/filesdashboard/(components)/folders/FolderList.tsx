@@ -1,10 +1,9 @@
 import React, { Suspense } from "react";
 import FolderListItem from "./FolderListItem";
 import { getFolders } from "@/lib/services/filedashboard-services";
-import Loading from "../../loading";
 
 const FolderList = async () => {
-  const result = getFolders();
+  const result = await getFolders();
 
   return (
     <div className="bg-white rounded-lg shadow-md p-4 h-full">

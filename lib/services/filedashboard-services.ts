@@ -22,6 +22,7 @@ export const getFileDetailById = async (id: string): Promise<GeneraFileDetail | 
     return new Promise((resolve) => {
       const details: GeneraFileDetail[] = Object.values(filesdetail).flat();
       const detail = details.find((obj) => obj.id === id);
-      resolve(detail || null);
+      setTimeout(() => {resolve(detail || null);
+      }, 1000); 
     });
   };

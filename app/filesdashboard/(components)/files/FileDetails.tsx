@@ -1,6 +1,4 @@
 import { getFileDetailById } from "@/lib/services/filedashboard-services";
-import { Suspense } from "react";
-import Loading from "../../loading";
 interface FilesDetailsProps {
   id: string;
 }
