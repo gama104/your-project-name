@@ -1,6 +1,8 @@
+import { Suspense } from "react";
 import FileDetails from "./(components)/files/FileDetails";
 import FileList from "./(components)/files/FileList";
 import FolderList from "./(components)/folders/FolderList";
+import Loading from "./loading";
 
 export default function FilesDashboard({
   searchParams,
@@ -15,14 +17,20 @@ export default function FilesDashboard({
     <div className="flex-1 bg-gray-200 p-4 h-full">
       <div className="flex h-full space-x-3">
         <div className={"flex flex-col w-2/5"}>
-          <FolderList />
+          <Suspense fallback={<Loading />}>
+            <FolderList />
+          </Suspense>
         </div>
         <div className={"flex flex-col w-2/5"}>
-          <FileList folder={selectedFolder} view={selectedView} />
+          <Suspense fallback={<Loading />}>
+            <FileList folder={selectedFolder} view={selectedView} />
+          </Suspense>
         </div>
         {selectedFile && (
           <div className="flex flex-col w-1/5">
-            <FileDetails id={selectedFile} />
+            <Suspense fallback={<Loading />}>
+              <FileDetails id={selectedFile} />
+            </Suspense>
           </div>
         )}
       </div>

@@ -6,18 +6,17 @@ import AddFileButton from "./AddFileButton";
 import { GeneraFile } from "../../(store)/definitions";
 import { files as filesRecord } from "../../(store)/placeholder-data";
 import FilesViewToggle from "./FilesViewToggle";
+import { getFilesByFolderId } from "@/lib/services/filedashboard-services";
 
 interface FileListProps {
   folder?: string;
   view?: string;
 }
 
-const FileList = ({ folder, view }: FileListProps) => {
+const FileList = async ({ folder, view }: FileListProps) => {
   const selectedFolderID = folder;
   const selectedView = view || "list";
-  const files: GeneraFile[] = selectedFolderID
-    ? filesRecord[parseInt(selectedFolderID)] || []
-    : [];
+  const files = await getFilesByFolderId(selectedFolderID);
 
   return (
     <div className="bg-white rounded-lg shadow-md p-4 h-full flex flex-col">

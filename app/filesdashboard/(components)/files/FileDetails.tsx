@@ -1,13 +1,12 @@
-import { GeneraFileDetail } from "../../(store)/definitions";
-import { filesdetail as filesdetail } from "../../(store)/placeholder-data";
-
+import { getFileDetailById } from "@/lib/services/filedashboard-services";
+import { Suspense } from "react";
+import Loading from "../../loading";
 interface FilesDetailsProps {
   id: string;
 }
 
-const FileDetails = ({ id }: FilesDetailsProps) => {
-  const details: GeneraFileDetail[] = Object.values(filesdetail).flat();
-  const detail = details.find((obj) => obj.id === id);
+const FileDetails = async ({ id }: FilesDetailsProps) => {
+  const detail = await getFileDetailById(id);
   if (!detail) {
     return null;
   }
