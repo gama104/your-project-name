@@ -27,7 +27,7 @@ const FileList = async ({ folder, view }: FileListProps) => {
         </div>
         <FilesViewToggle fileview={view} />
       </div>
-      <div className="flex-grow overflow-y-auto h-1">
+      <div className="flex-grow overflow-y-auto">
         {selectedView === "list" ? (
           <FileListItem files={files} />
         ) : (

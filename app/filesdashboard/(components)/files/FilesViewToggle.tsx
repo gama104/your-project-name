@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React from "react";
 import { FaList, FaTh } from "react-icons/fa";
 import { Toggle } from "@/components/ui/toggle";
@@ -23,20 +23,24 @@ const FileList: React.FC<FilesViewToggleProp> = ({ fileview }) => {
   };
 
   return (
-    <div className="flex space-x-0 border border-gray-300 rounded-full">
+    <div className="flex space-x-0 border border-gray-300 rounded-full overflow-hidden">
       <Toggle
-        className={`flex items-center justify-center w-12 h-8 focus:outline-none ${
+        className={`flex items-center justify-center w-1/2 h-10 focus:outline-none ${
           selectedView === "list" ? "bg-gray-300" : "bg-white"
-        } ${selectedView === "list" ? "rounded-r-none" : ""} hover:bg-gray-300 rounded-l-full`}
+        } ${
+          selectedView === "list" ? "rounded-r-none" : ""
+        } hover:bg-gray-300 rounded-l-full`}
         aria-label="Toggle list view"
         onClick={() => onViewClick("list")}
       >
         <FaList className="text-blue-500" />
       </Toggle>
       <Toggle
-        className={`flex items-center justify-center w-12 h-8 focus:outline-none ${
+        className={`flex items-center justify-center w-1/2 h-10 focus:outline-none ${
           selectedView === "icons" ? "bg-gray-300" : "bg-white"
-        } ${selectedView === "icons" ? "rounded-l-none" : ""} hover:bg-gray-300 rounded-r-full`}
+        } ${
+          selectedView === "icons" ? "rounded-l-none" : ""
+        } hover:bg-gray-300 rounded-r-full`}
         aria-label="Toggle icons view"
         onClick={() => onViewClick("icons")}
       >

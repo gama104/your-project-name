@@ -39,12 +39,12 @@ const ItemsComponent: React.FC<ItemsComponentProps> = ({ files }) => {
   };
 
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {files.map((file) => (
         <Card
           key={file.id}
           onClick={() => onFolderClick(file.id)}
-          className="cursor-pointer bg-gray-100 hover:bg-gray-200 py-4"
+          className="cursor-pointer bg-gray-100 hover:bg-gray-200 py-3 sm:py-4"
         >
           <CardContent className="flex items-center px-3">
             <FaCheck className="text-sky-400 mr-2" />

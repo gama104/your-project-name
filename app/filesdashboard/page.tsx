@@ -19,19 +19,19 @@ export default function FilesDashboard({
 
   return (
     <div className="flex-1 bg-gray-200 p-4 h-full">
-      <div className="flex h-full space-x-3">
-        <div className={"flex flex-col w-2/5"}>
+      <div className="flex flex-col md:flex-row h-full space-y-3 md:space-y-0 md:space-x-3">
+        <div className="flex flex-col w-full md:w-2/5">
           <Suspense fallback={<FoldersSkeleton />}>
             <FolderList />
           </Suspense>
         </div>
-        <div className={"flex flex-col w-2/5"}>
+        <div className="flex flex-col w-full md:w-2/5">
           <Suspense fallback={<FilesListSkeleton />}>
             <FileList folder={selectedFolder} view={selectedView} />
           </Suspense>
         </div>
         {selectedFile && (
-          <div className="flex flex-col w-1/5">
+          <div className="flex flex-col w-full md:w-1/5">
             <Suspense fallback={<FileDetailsSkeleton />}>
               <FileDetails id={selectedFile} />
             </Suspense>

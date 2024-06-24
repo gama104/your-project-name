@@ -24,10 +24,12 @@ const FileListItem: React.FC<Props> = ({ files }) => {
         <li
           key={file.id}
           onClick={() => onFolderClick(file.id)}
-          className="flex justify-between items-center p-4 hover:bg-gray-100 cursor-pointer"
+          className="flex justify-between items-center p-3 sm:p-4 hover:bg-gray-100 cursor-pointer"
         >
           <div>
-            <p className="text-sm font-medium text-gray-900">{file.name}</p>
+            <p className="text-base sm:text-lg font-medium text-gray-900">
+              {file.name}
+            </p>
             <p className="text-sm text-gray-500">{`${file.size} MB`}</p>
           </div>
           <div className="text-right">

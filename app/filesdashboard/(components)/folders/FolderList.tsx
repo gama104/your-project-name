@@ -6,9 +6,9 @@ const FolderList = async () => {
   const result = await getFolders();
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-4 h-full">
+    <div className="bg-white rounded-lg shadow-md p-4 h-full flex flex-col">
       <h2 className="text-lg font-semibold text-teal-800 mb-4">User Folders</h2>
-      <ul>
+      <ul className="flex-grow overflow-y-auto">
         {(await result).map((folder) => (
           <FolderListItem key={folder.id} folder={folder} />
         ))}

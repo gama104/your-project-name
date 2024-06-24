@@ -15,6 +15,7 @@ const ContentHeader: React.FC<Props> = ({ title, instructions }) => {
   const handleOpenDialog = () => setIsDialogOpen(true);
   const handleCloseDialog = () => setIsDialogOpen(false);
   const handleSave = () => setIsDialogOpen(false);
+
   return (
     <div className="relative w-full h-24 bg-white border-y-4 border-gray-200 text-black flex items-center justify-between px-6">
       <div className="flex items-center">
